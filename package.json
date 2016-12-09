@@ -1,5 +1,5 @@
 {
-  "name": "devmsg",
+  "name": "mis",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/devmsg/mis.git"
   },
-  "author": "co.devmsg",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/devmsg/mis/issues"

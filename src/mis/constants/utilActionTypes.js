@@ -1,0 +1,1 @@
+export const GET_APP_CONFIG_INFO = "GET_APP_CONFIG_INFO";

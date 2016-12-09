@@ -1,0 +1,113 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	font-family: "微软雅黑", "华文细黑", Arial, sans-serif;
+	font-size: 16px;
+	color: #000;
+	word-wrap: break-word;
+	-webkit-text-size-adjust: none;
+	background: #e9ecf3;
+}
+
+article, aside, details, figcaption, figure, footer, header, menu, nav, section {
+	display: block;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	padding: 0;
+	margin: 0;
+	font-weight: inherit;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+ol, ul, p {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+input, textarea, button {
+	outline: none;
+	border: 0;
+	-webkit-appearance: none;
+	padding: 0;
+	margin: 0;
+}
+
+img {
+	vertical-align: middle;
+	width: 100%;
+}
+
+.hidden{
+	display: none !important;
+}
+.g_clear{
+	clear: both;
+}
+.g_container{
+	margin:0px 10px;
+}
+.panel{
+	-webkit-border-radius:4px;
+	-moz-border-radius:4px;
+	border-radius:4px;
+	background: #ffffff;
+	padding: 20px 20px 50px;
+}
+
+
+@media screen and (max-width:1200px) {
+	#head {
+		.logo{
+			border-right:0px;
+			border-bottom: 1px solid #eee;
+		}
+	}
+
+	.main_container {
+		.sidebar {
+			top:120px;
+			width: 240px;
+		}
+	}
+	.main_content{
+		padding-top: 120px !important;
+		padding-left: 0px !important;
+	}
+}
+.g_divider{
+	border-top:1px solid #e9e9e9;
+}
+.img_address{
+	margin: 20px -16px 0px -16px;
+	padding: 15px 16px 0px 16px;
+	font-size: 18px;
+	color: #666;
+}
+.img_show_td{
+	height:30px;
+}
+.button_pad{
+	margin:10px 4px;
+}
+
+.left{
+	float:left;
+}
+.right{
+	float: right;
+}

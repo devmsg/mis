@@ -13,7 +13,7 @@ import {
 	Badge,
 	notification
 } from 'antd';
-import Redux from '../widget/appConfig'
+import Redux from './public/appConfigReduxHigherFunction'
 
 require('../static/styles/page/home.scss');
 

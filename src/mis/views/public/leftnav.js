@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router'
-import reduxHigher from '../../widget/appConfig'
+import Redux from '../public/appConfigReduxHigherFunction'
 import {
 	Row,
 	Col,
@@ -13,7 +13,7 @@ import {
 
 const SubMenu = Menu.SubMenu;
 
-@reduxHigher
+@Redux
 class Node extends Component {
 	// 构造
 	constructor(props) {

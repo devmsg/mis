@@ -7,33 +7,6 @@ export default ()=> {
 	return dispatch=> {
 		dispatch({
 			type     : GET_APP_CONFIG_INFO,
-			appConfig: {
-				menu: {
-					admin: {
-						navList    : [
-							{
-								name   : "2",
-								path   : "",
-								icon   : "",
-								submenu: [
-									{
-										name: "",
-										path: "",
-										icon: "",
-									}
-								]
-							}
-						],
-						otherRouter: [
-							{
-								path: '',
-								name: '',
-								icon: ""
-							}
-						]
-					}
-				}
-			}
 		});
 	}
 }
@@ -45,8 +18,4 @@ export function hideErrorItemAction() {
 			type: false
 		}
 	}
-}
-
-export function assaa(data) {
-	
 }

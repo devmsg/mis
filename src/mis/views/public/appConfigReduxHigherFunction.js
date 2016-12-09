@@ -1,6 +1,6 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import * as appConfigAction from '../actions/appConfigAction'
+import * as appConfigAction from '../../actions/appConfigAction'
 import $ from 'jquery';
 
 export default (Node, otherAction = {})=> {

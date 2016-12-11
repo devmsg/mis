@@ -36,7 +36,7 @@ class Node extends Component {
 
 	componentWillMount() {
 		let scr_width = window.innerWidth;
-		if (scr_width < 1024) {
+		if (scr_width < 1400) {
 			this.setState({
 				switch: false
 			})
@@ -81,11 +81,9 @@ class Node extends Component {
 					<Row>
 						<Col xs={24} lg={3}>
 							<div className="logo">
-								<Link to={`${window.appName}`}>
-									<img
-										src=""
-										alt=""/>
-								</Link>
+								<img
+									src=""
+									alt=""/>
 							</div>
 						</Col>
 						<Col xs={3} lg={3}>

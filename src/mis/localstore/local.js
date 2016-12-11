@@ -14,7 +14,6 @@ const STORETREE = {
 	router: []
 };
 
-
 /**
  *
  * addRouter: 增加Router 参数(path:地址,component:组件)
@@ -47,12 +46,12 @@ const CONFIG = {
 			{
 				name     : '',
 				path     : '',
-				component: ''
+				component: '',
 			}
 		]
 	}) {
 		STORETREE.menu.admin.navList.push(obj);
-		obj.submenu && obj.submenu.map((v)=> {
+		obj.submenu && obj.submenu.map((v) => {
 			return (
 				this.addRouter(v.path, v.component)
 			)
@@ -73,37 +72,25 @@ CONFIG.addMenuInfoArray({
 	path: '/quanxiancandna'
 }, componentList.Quanxiancaidan);
 
-
 CONFIG.addSubMenuInfoArray({
-	name: '菜单',
-	icon: 'setting',
+	name   : '菜单',
+	icon   : 'setting',
 	submenu: [
 		{
 			name     : '下拉菜单01',
-			path     : '/item',
+			path     : '/1',
+			component: '',
+		},
+		{
+			name     : '下拉菜单01',
+			path     : '/2',
 			component: ''
 		},
 		{
 			name     : '下拉菜单01',
-			path     : '/item',
+			path     : '/3',
 			component: ''
 		},
-		{
-			name     : '下拉菜单01',
-			path     : '/item',
-			component: ''
-		},
-		{
-			name     : '下拉菜单01',
-			path     : '/item',
-			component: ''
-		},
-		{
-			name     : '下拉菜单01',
-			path     : '/item',
-			component: ''
-		}
-
 	]
 });
 CONFIG.addMenuInfoArray({
@@ -112,6 +99,6 @@ CONFIG.addMenuInfoArray({
 	path: '/path'
 }, componentList.Path);
 
-CONFIG.addRouter('/path',componentList.Path);
+CONFIG.addRouter('/path', componentList.Path);
 
 export default CONFIG.init();

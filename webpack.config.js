@@ -85,8 +85,10 @@ module.exports = {
 	].concat(!debug ? [
 		new webpack.optimize.UglifyJsPlugin({//压缩
 			compress: {
+				warnings: false,
+				drop_debugger: true,
+				drop_console: true
 				//supresses warnings, usually from module minification
-				warnings: false
 			}
 		}),
 

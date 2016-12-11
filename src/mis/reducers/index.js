@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux';
 
-import appConfig from './appConfigReducer';
+import appConfigReducer from './appConfigReducer';
 import publicReducer from './publicReducer';
 export default combineReducers({
-	appConfig,
+	appConfigReducer,
 	publicReducer
 });

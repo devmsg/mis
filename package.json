@@ -4,7 +4,7 @@
   "description": "open",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --colors --hot --inline --progress",
+    "start": "webpack-dev-server --colors --hot --inline --progress --history-api-fallback",
     "create": "node ./text.js",
     "build:dll":" NODE_ENV=production webpack --config dll.config.js --colors --inline --progress"
   },

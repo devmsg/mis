@@ -34,7 +34,7 @@ class Node extends Component {
 		menu.admin.navList.map((v, k) => {
 			if (v.submenu == undefined) {
 				if (v.path == router) {
-					this.current.push(k+'');
+					this.current.push(k + '');
 				}
 			}
 		});
@@ -47,18 +47,19 @@ class Node extends Component {
 		menu.admin.navList.map((v, k) => {
 			if (v.submenu == undefined) {
 				if (v.path == router) {
-					this.current.push(k+'');
+					this.current.push(k + '');
 				}
-			}else{
-				{v.submenu && v.submenu.map((vv,kk)=>{
-					if (vv.path == router) {
-						this.current.push(k + '-' + kk);
-					}
-				})}
+			} else {
+				{
+					v.submenu && v.submenu.map((vv, kk) => {
+						if (vv.path == router) {
+							this.current.push(k + '-' + kk);
+						}
+					})
+				}
 			}
 		});
 	}
-
 
 	render() {
 		const { appConfigReducer } = this.props;

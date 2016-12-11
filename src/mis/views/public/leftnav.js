@@ -25,7 +25,7 @@ class Node extends Component {
 		// 初始状态
 		this.current = [];
 		this.state = {
-			openKeys: '1',
+			openKeys: '0',
 		};
 
 		const { appConfigReducer } = props;
@@ -66,22 +66,33 @@ class Node extends Component {
 		return (
 
 			<Menu mode="inline"
+			      theme="dark"
 			      defaultOpenKeys={[this.state.openKeys]}
 			      defaultSelectedKeys={this.current}>
 				{appConfigReducer.menu.admin.navList.map((v, k) => {
 					if (v.submenu == undefined) {
 						return (
-							<Menu.Item key={k}><Link to={`${window.appName}${v.path}`}><Icon type={v.icon}/>{v.name}
-							</Link></Menu.Item>
+							<Menu.Item key={k}>
+								<Link to={`${window.appName}${v.path}`}>
+									<Icon style={!this.props.collapse ?
+									             { fontSize: "12px", transition: 'all 0.3s ease' } :
+									             { fontSize: "16px", transition: 'all 0.3s ease' }} type={v.icon}/>
+									{v.name}
+								</Link>
+							</Menu.Item>
 						)
 					} else {
 						return (
-							<SubMenu key={k} title={<span><Icon type={v.icon}/><span>{v.name}</span></span>}>
 
+							<SubMenu key={k} title={<span><Icon type={v.icon}/><span>{v.name}</span></span>}>
 								{v.submenu && v.submenu.map((vv, kk) => {
 									return (
-										<Menu.Item key={k + '-' + kk}><Link
-											to={`${window.appName}${vv.path}`}>{vv.name}</Link></Menu.Item>
+										<Menu.Item key={k + '-' + kk}>
+											<Link to={`${window.appName}${vv.path}`}>
+												<Icon type={v.icon}/>
+												{vv.name}
+											</Link>
+										</Menu.Item>
 									)
 								})}
 							</SubMenu>

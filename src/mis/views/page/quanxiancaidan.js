@@ -10,7 +10,7 @@ class Node extends Component {
 
 	render() {
 		return (
-			<div>this item</div>
+			<div style={{height:"2000px"}}>this item</div>
 		)
 	}
 }

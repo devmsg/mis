@@ -73,12 +73,13 @@ CONFIG.addMenuInfoArray({
 }, componentList.Quanxiancaidan);
 
 CONFIG.addSubMenuInfoArray({
-	name   : '菜单',
+	name   : '用户产品',
 	icon   : 'setting',
 	submenu: [
 		{
 			name     : '下拉菜单01',
 			path     : '/1',
+			icon   : 'setting',
 			component: '',
 		},
 		{

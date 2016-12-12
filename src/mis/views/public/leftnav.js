@@ -27,17 +27,6 @@ class Node extends Component {
 		this.state = {
 			openKeys: '0',
 		};
-
-		const { appConfigReducer } = props;
-		const { menu } = appConfigReducer;
-		const router = window.location.pathname;
-		menu.admin.navList.map((v, k) => {
-			if (v.submenu == undefined) {
-				if (v.path == router) {
-					this.current.push(k + '');
-				}
-			}
-		});
 	}
 
 	componentWillMount() {

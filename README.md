@@ -1,4 +1,6 @@
 # 项目启动
+- npm install
+- npm run build:dll //常用的js依赖库 压缩编译成一个dll文件，好处是类似cdn
 - npm start 启动
 - ui框架使用的 https://ant.design/
 

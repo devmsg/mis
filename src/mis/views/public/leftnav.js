@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import {
 	Link,
-	Router,
-	Route,
 } from 'react-router'
 import Redux from '../public/appConfigReduxHigherFunction'
 import {
@@ -29,9 +27,9 @@ class Node extends Component {
 	}
 
 	componentWillMount() {
-		let { appConfig } = this.props;
+		let { appConfigReducer } = this.props;
 		let router = '/' + window.location.hash.replace(/#/, '').split('/')[1];
-		const { menu } = appConfig;
+		const { menu } = appConfigReducer;
 		menu.admin.navList.map((v, k) => {
 			if (v.submenu == undefined) {
 				if (v.path == router) {

@@ -56,7 +56,7 @@ class Node extends Component {
 
 			<Menu mode="inline"
 			      theme="dark"
-			      defaultOpenKeys={[this.state.openKeys]}
+			      defaultOpenKeys={[this.openKeys]}
 			      defaultSelectedKeys={this.current}>
 				{appConfigReducer.menu.admin.navList.map((v, k) => {
 					if (v.submenu == undefined) {

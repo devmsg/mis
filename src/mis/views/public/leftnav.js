@@ -24,15 +24,14 @@ class Node extends Component {
 		super(props);
 		// 初始状态
 		this.current = [];
-		this.state = {
-			openKeys: '0',
-		};
+		this.openKeys= '';
+		this.state = {};
 	}
 
 	componentWillMount() {
-		const { appConfigReducer } = this.props;
-		const { menu } = appConfigReducer;
-		const router = window.location.pathname;
+		let { appConfig } = this.props;
+		let router = '/' + window.location.hash.replace(/#/, '').split('/')[1];
+		const { menu } = appConfig;
 		menu.admin.navList.map((v, k) => {
 			if (v.submenu == undefined) {
 				if (v.path == router) {
@@ -42,6 +41,7 @@ class Node extends Component {
 				{
 					v.submenu && v.submenu.map((vv, kk) => {
 						if (vv.path == router) {
+							this.openKeys= k.toString();
 							this.current.push(k + '-' + kk);
 						}
 					})

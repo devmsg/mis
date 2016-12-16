@@ -26,7 +26,6 @@ ReactDOM.render(
 					)
 				})}
 			</Route>
-			<Redirect from="*" to="404"/>
 		</Router>
 	</Root>
 	, document.getElementById('react_root'));

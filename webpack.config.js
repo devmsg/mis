@@ -8,7 +8,6 @@ var debug             = true;
 var src               = 'build';
 var publicPath        = '';
 var serverDomain      = '';
-var dllPath           = '/build/DLL/lib.js';
 
 module.exports = {
 	devServer: {//webpack 服务器配置信息
@@ -71,24 +70,18 @@ module.exports = {
 		new HtmlWebpackPlugin({//输出HTML配置
 			filename     : 'index.html',
 			domain       : serverDomain,
-			dllPath      : dllPath,
 			hash         : true,
 			chunks       : ['mis/index'],
 			excludeChunks: [],
 			template     : __dirname + '/src/index.html',
 			inject       : 'body' // Inject all scripts into the body (this is the default so you can skip it)
 		}),
-		new webpack.DllReferencePlugin({//引用DLL文件
-			context : __dirname,
-			manifest: require('./manifest.json'),
-		}),
-	].concat(!debug ? [
+	].concat(debug ? [
 		new webpack.optimize.UglifyJsPlugin({//压缩
 			compress: {
 				warnings: false,
 				drop_debugger: true,
 				drop_console: true
-				//supresses warnings, usually from module minification
 			}
 		}),
 

@@ -17,7 +17,7 @@ require('../static/styles/reset.scss');
 
 ReactDOM.render(
 	<Root>
-		<Router history={browserHistory}>
+		<Router history={hashHistory}>
 			<Route path="/" component={Home}>
 				<IndexRedirect to="/path"/>
 				{localRouters.router.map((v, k) => {

@@ -2,7 +2,6 @@
 - 项目依赖webpack构建工具。建议npm安装webpack时使用 -g 参数。
 - 项目内package.json为项目相关依赖。使用npm install安装相关依赖。
 - npm install
-- npm run build:dll //常用的js依赖库 压缩编译成一个dll文件，好处是类似cdn
 - npm start 启动项目
 - 浏览器启动localhost:8010可查询项目页面。
 - 整站使用github作为版本管理。master为分支主目录 点击查看git简单使用

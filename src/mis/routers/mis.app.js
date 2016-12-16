@@ -1,23 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createHashHistory } from 'history'
 import {
 	Router,
 	Route,
 	hashHistory,
 	Redirect,
 	browserHistory,
-	IndexRedirect
+	IndexRedirect,
+	useRouterHistory
 } from 'react-router'
 import Root, { store } from '../widget/root'
 import Home from '../views/home'
 import localRouters from '../localstore/local'
 
+var appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
+
 window.appName = '';
-require('../static/styles/reset.scss');
+import '../static/styles/reset.scss';
 
 ReactDOM.render(
 	<Root>
-		<Router history={hashHistory}>
+		<Router history={appHistory}>
 			<Route path="/" component={Home}>
 				<IndexRedirect to="/path"/>
 				{localRouters.router.map((v, k) => {

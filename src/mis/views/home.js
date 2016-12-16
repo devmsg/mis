@@ -55,9 +55,7 @@ class Node extends Component {
 					<div className="ant-layout-body-main">
 						<div className="ant-layout-container">
 							<div className="ant-layout-content">
-								<div style={{ height: 220 }}>
-									{this.props.children}
-								</div>
+								{this.props.children}
 							</div>
 						</div>
 					</div>

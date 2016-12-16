@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --colors --hot --inline --progress",
-    "create": "node ./text.js",
-    "build:dll":" NODE_ENV=production webpack --config dll.config.js --colors --inline --progress"
+    "create": "node ./text.js"
   },
   "keywords": [
     "dev"

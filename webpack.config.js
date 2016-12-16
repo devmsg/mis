@@ -76,7 +76,7 @@ module.exports = {
 			template     : __dirname + '/src/index.html',
 			inject       : 'body' // Inject all scripts into the body (this is the default so you can skip it)
 		}),
-	].concat(debug ? [
+	].concat(!debug ? [
 		new webpack.optimize.UglifyJsPlugin({//压缩
 			compress: {
 				warnings: false,

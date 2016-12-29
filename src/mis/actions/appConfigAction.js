@@ -3,10 +3,10 @@ import{
 } from '../constants/utilActionTypes'
 import { ERROR_ACTION } from '../constants/publickActionTypes'
 
-export default ()=> {
-	return dispatch=> {
+export default () => {
+	return dispatch => {
 		dispatch({
-			type     : GET_APP_CONFIG_INFO,
+			type: GET_APP_CONFIG_INFO,
 		});
 	}
 }

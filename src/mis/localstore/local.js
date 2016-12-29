@@ -66,40 +66,19 @@ const CONFIG = {
 	},
 };
 
-CONFIG.addMenuInfoArray({
-	name: '权限菜单',
-	icon: 'setting',
-	path: '/quanxiancandna'
-}, componentList.Quanxiancaidan);
-
 CONFIG.addSubMenuInfoArray({
-	name   : '用户产品',
+	name   : '菜单管理',
 	icon   : 'setting',
 	submenu: [
 		{
-			name     : '下拉菜单01',
-			path     : '/1',
-			icon   : 'setting',
-			component: '',
-		},
-		{
-			name     : '下拉菜单01',
-			path     : '/2',
-			component: ''
-		},
-		{
-			name     : '下拉菜单01',
-			path     : '/3',
-			component: ''
+			name     : '后台菜单',
+			path     : '/menu',
+			icon     : 'menu',
+			component: componentList.Quanxiancaidan,
 		},
 	]
 });
-CONFIG.addMenuInfoArray({
-	name: 'path',
-	icon: 'setting',
-	path: '/path'
-}, componentList.Path);
 
-CONFIG.addRouter('/path', componentList.Path);
+
 
 export default CONFIG.init();

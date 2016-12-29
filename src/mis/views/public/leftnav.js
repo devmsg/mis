@@ -76,7 +76,7 @@ class Node extends Component {
 									return (
 										<Menu.Item key={k + '-' + kk}>
 											<Link to={`${window.appName}${vv.path}`}>
-												<Icon type={v.icon}/>
+												<Icon type={vv.icon}/>
 												{vv.name}
 											</Link>
 										</Menu.Item>

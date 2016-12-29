@@ -19,8 +19,10 @@ let appHistory = useRouterHistory(createHashHistory)({ queryKey: false });
 window.appName = '';
 import '../static/styles/reset.scss';
 
+let type = true;
 const isLogin = () => {
 	//todo
+	type ? console.log(13) : appHistory.push('/login');
 };
 
 ReactDOM.render(
@@ -28,12 +30,12 @@ ReactDOM.render(
 		<Router history={appHistory}>
 			<Route path="/login" component={LoginManager}/>
 			<Route path="/" component={Home} onEnter={isLogin}>
-				<IndexRedirect to="/path"/>
 				{localRouters.router.map((v, k) => {
 					return (
 						<Route key={k} {...v}/>
 					)
 				})}
+				<Redirect from="*" to="menu"/>
 			</Route>
 		</Router>
 	</Root>

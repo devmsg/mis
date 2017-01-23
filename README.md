@@ -17,4 +17,4 @@
 - redux
 - react
 - underscore 建议之后换成 lodash
-- jquery 处理ajax、对象深复制。 建议拆开，使用fetch、extends组件代替
+- jquery 处理ajax、对象深复制。 后续将会全面支持es6 es7

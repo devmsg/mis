@@ -12,5 +12,4 @@ export default (state, action)=> {
 			break;
 	}
 	return newState;
-
 }

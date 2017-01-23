@@ -23,7 +23,16 @@ class Node extends Component {
 	constructor(props) {
 		super(props);
 		// 初始状态
-		this.state = {};
+		this.state = {
+			info:[
+				'姓名:李凯旗',
+				'职业:前端工程师',
+				'博客:https://www.devmsg.com',
+				'github:https://github.com/devmsg',
+				'技术栈:react redux webpack es6 react-native'
+
+			]
+		};
 	}
 
 	componentWillReceiveProps(props) {
@@ -51,7 +60,9 @@ class Node extends Component {
 					<LeftNav/>
 				</aside>
 				<div className="ant-layout-main">
-					<div className="ant-layout-header">12</div>
+					<div className="ant-layout-header">
+						mis系统
+					</div>
 					<div className="ant-layout-body-main">
 						<div className="ant-layout-container">
 							<div className="ant-layout-content">

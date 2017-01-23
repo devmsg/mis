@@ -67,11 +67,11 @@ const CONFIG = {
 };
 
 CONFIG.addSubMenuInfoArray({
-	name   : '菜单管理',
+	name   : '面试题',
 	icon   : 'setting',
 	submenu: [
 		{
-			name     : '后台菜单',
+			name     : '网通天下',
 			path     : '/menu',
 			icon     : 'menu',
 			component: componentList.Quanxiancaidan,

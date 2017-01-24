@@ -20,10 +20,10 @@ module.exports = {
 		'mis/index': __dirname + "/src/mis/routers/mis.app.js",//入口
 	},
 	output   : {
-		publicPath   : publicPath,//静态文件顶部相对位置
-		path         : path.join(__dirname, src),//服务器目录相对路径
-		filename     : "[name].js",//输出模块文件
-		chunkFilename: 'app/chunk/[name].[chunkhash:8].chunk.js'//拆包配置
+		publicPath: publicPath,//静态文件顶部相对位置
+		path      : path.join(__dirname, src),//服务器目录相对路径
+		filename  : "[name].js",//输出模块文件
+		// chunkFilename: 'app/chunk/[name].[chunkhash:8].chunk.js'//拆包配置
 	},
 	module   : {
 		noParse: [/mis\/js/, /mis\/q/],//排除目录
@@ -32,10 +32,16 @@ module.exports = {
 			loader : 'babel-loader',
 			exclude: /node_modules/,
 			query  : {
-				plugins: ["transform-decorators-legacy", ["import", {
-					libraryName: "antd",
-					style      : "css"
-				}]],
+				plugins: [
+					"transform-decorators-legacy",
+					[
+						"import",
+						{
+							libraryName: "antd",
+							style      : "css"
+						}
+					]
+				],
 				presets: ['react', 'es2015', 'stage-0']
 			},
 			happy  : { id: 'js1' },
@@ -71,38 +77,38 @@ module.exports = {
 			filename     : 'index.html',
 			domain       : serverDomain,
 			hash         : true,
-			chunks       : ['mis/index'],
-			excludeChunks: [],
+			// chunks       : ['mis/index'],
+			// excludeChunks: [],
 			template     : __dirname + '/src/index.html',
 			inject       : 'body' // Inject all scripts into the body (this is the default so you can skip it)
 		}),
 	].concat(!debug ? [
-		new webpack.optimize.UglifyJsPlugin({//压缩
-			compress: {
-				warnings: false,
-				drop_debugger: true,
-				drop_console: true
-			}
-		}),
-
-		function () {
-			var deleteFolderRecursive = function (path) {//清空目录
-				var files = [];
-				if (fs.existsSync(path)) {
-					files = fs.readdirSync(path);
-					files.forEach(function (file, index) {
-						var curPath = path + "/" + file;
-						if (fs.statSync(curPath).isDirectory()) { // recurse
-							deleteFolderRecursive(curPath);
-						} else { // delete file
-							fs.unlinkSync(curPath);
-						}
-					});
-					fs.rmdirSync(path);
+			new webpack.optimize.UglifyJsPlugin({//压缩
+				compress: {
+					warnings     : false,
+					drop_debugger: true,
+					drop_console : true
 				}
+			}),
 
-			};
-			deleteFolderRecursive(path.join(__dirname, "build/"));
-		}
-	] : [])
+			function () {
+				var deleteFolderRecursive = function (path) {//清空目录
+					var files = [];
+					if (fs.existsSync(path)) {
+						files = fs.readdirSync(path);
+						files.forEach(function (file, index) {
+							var curPath = path + "/" + file;
+							if (fs.statSync(curPath).isDirectory()) { // recurse
+								deleteFolderRecursive(curPath);
+							} else { // delete file
+								fs.unlinkSync(curPath);
+							}
+						});
+						fs.rmdirSync(path);
+					}
+
+				};
+				deleteFolderRecursive(path.join(__dirname, "build/"));
+			}
+		] : [])
 };

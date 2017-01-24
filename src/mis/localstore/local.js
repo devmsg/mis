@@ -72,13 +72,15 @@ CONFIG.addSubMenuInfoArray({
 	submenu: [
 		{
 			name     : '网通天下',
-			path     : '/menu',
-			icon     : 'menu',
-			component: componentList.Quanxiancaidan,
+			path     : '/wttx',
+			component: componentList.Wttx,
+		},
+		{
+			name     : 'Mokahr',
+			path     : '/mokahr',
+			component: componentList.Mokahr,
 		},
 	]
 });
-
-
 
 export default CONFIG.init();

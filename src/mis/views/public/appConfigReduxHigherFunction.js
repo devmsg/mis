@@ -1,12 +1,11 @@
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import * as appConfigAction from '../../actions/appConfigAction'
-import $ from 'jquery';
 
-export default (Node, otherAction = {}) => {
+export default (Node) => {
 
 	let mapDispatchToProps = (dispatch) => {
-		return bindActionCreators($.extend(appConfigAction, otherAction), dispatch)
+		return bindActionCreators(appConfigAction, dispatch)
 	};
 
 	return connect((state) => {

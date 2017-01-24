@@ -51,7 +51,7 @@ module.exports = {
 			test  : /\.less$/,
 			loader: ExtractTextPlugin.extract("style", "css!autoprefixer!less")
 		}, {
-			test  : /.(png)|(jpg)$/,
+			test  : /.(png)|(jpg)|(jpeg)$/,
 			loader: "url?limit=50000,name=img/[hash:8].[name].[ext]",
 			// happy  : { id: 'img' },
 		}]

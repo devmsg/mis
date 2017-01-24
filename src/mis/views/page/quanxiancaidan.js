@@ -48,9 +48,9 @@ class Node extends Component {
 			<div>
 
 				<div>
-					<img style={{ width: "30%" }} src='https://www.devmsg.com/usr/uploads/2017/01/3794452843.jpeg'
+					<img style={{ width: "30%" }} src={require("../../static/img/WechatIMG1.jpeg")}
 					     alt=""/>
-					<img style={{ width: "30%" }} src="https://www.devmsg.com/usr/uploads/2017/01/2128800822.jpeg"
+					<img style={{ width: "30%" }} src={require("../../static/img/WechatIMG2.jpeg")}
 					     alt=""/>
 				</div>
 				<div>

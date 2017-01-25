@@ -136,7 +136,7 @@ class Node extends Component {
 	render() {
 		return (
 			<div className="recruit" style={{
-				width          : '80%',
+				width          : '50%',
 				backgroundColor: 'rgb(106, 127, 142)',
 				color          : 'rgb(220, 220, 220)'
 			}}>

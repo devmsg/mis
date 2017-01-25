@@ -67,15 +67,16 @@ class Node extends Component {
 
 	handleSubmit(keys) {
 		let cloneObj = Object.assign({}, this.state.recruit);
-
-		keys && keys.map((obj) => {
-			EventList.handleChange('0', `info.${obj.k}.require.${obj.kk}.count`, cloneObj);
+		keys && keys.map((v,k) => {
+			v && v.map((vv,kk)=>{
+				if(vv){
+					EventList.handleChange('0', `info.${k}.require.${kk}.count`, cloneObj);
+				}
+			})
 		});
 		this.setState({
 			recruit: cloneObj
 		})
-
-
 	}
 
 
@@ -85,7 +86,7 @@ class Node extends Component {
 
 	checkAll(k, value) {
 		this.state.keys[k] = [];
-		this.state.recruit.info[k].require && this.state.recruit.info[k].require.map((v,kk)=>{
+		this.state.recruit.info[k].require && this.state.recruit.info[k].require.map((v, kk) => {
 			this.state.keys[k][kk] = value;
 		});
 
@@ -99,14 +100,14 @@ class Node extends Component {
 
 	checkSingle(obj, value) {
 		this.state.keys[obj.k][obj.kk] = value;
-		if (this.state.checkAll) {
-			this.state.checkAll = !this.state.checkAll;
+		if (this.state.checkAll[obj.k]) {
+			this.state.checkAll[obj.k] = !this.state.checkAll[obj.k];
 		}
+		let checkType = [...new Set(this.state.keys[obj.k])];
+		(checkType.length == 1 && checkType[0]) ? this.state.checkAll[obj.k] = true : this.state.checkAll[obj.k] = false;
 		this.setState({
-			keys: this.state.keys,
-		//
-		//
-		checkAll: this.state.checkAll
+			keys    : this.state.keys,
+			checkAll: this.state.checkAll
 		});
 	}
 
@@ -122,7 +123,8 @@ class Node extends Component {
 					fontSize: '18px',
 				}}>
 					{this.state.recruit.title}
-					<a href="javascripts:;" onClick={this.handleSubmit.bind(this, this.state.keys)}
+					<a href="javascripts:;"
+					   onClick={this.handleSubmit.bind(this, this.state.keys)}
 					   className="right">清空</a>
 					<div className="g_clear"></div>
 				</div>
@@ -143,7 +145,7 @@ class Node extends Component {
 										onChange={this.handleChange.bind(this, k)}
 									/>{v.title}
 								</span>
-								<span className="sum right">123</span>
+								<span className="sum right">{this.showSum()}</span>
 								<div className="g_clear"></div>
 							</div>
 
@@ -159,6 +161,10 @@ class Node extends Component {
 												<input
 													type="checkbox"
 													checked={this.state.keys[k][kk] ? 'checked' : ''}
+													onChange={this.handleChange.bind(this, {
+														k,
+														kk
+													})}
 												/>
 												{vv.name}
 											</span>

@@ -16,15 +16,15 @@ class Node extends Component {
 						require: [
 							{
 								name : 'Mac开发工程师',
-								count: '123'
+								count: 123
 							},
 							{
 								name : 'IOS App 测试工程师',
-								count: '123'
+								count: 123
 							},
 							{
 								name : 'IOS App 测试工程师',
-								count: '123'
+								count: 123
 							}
 
 						]
@@ -34,11 +34,11 @@ class Node extends Component {
 						require: [
 							{
 								name : 'Mac开发工程师',
-								count: '123'
+								count: 123
 							},
 							{
 								name : 'IOS App 测试工程师',
-								count: '123'
+								count: 123
 							}
 						]
 					}
@@ -67,10 +67,10 @@ class Node extends Component {
 
 	handleSubmit(keys) {
 		let cloneObj = Object.assign({}, this.state.recruit);
-		keys && keys.map((v,k) => {
-			v && v.map((vv,kk)=>{
-				if(vv){
-					EventList.handleChange('0', `info.${k}.require.${kk}.count`, cloneObj);
+		keys && keys.map((v, k) => {
+			v && v.map((vv, kk) => {
+				if (vv) {
+					EventList.handleChange(0, `info.${k}.require.${kk}.count`, cloneObj);
 				}
 			})
 		});
@@ -78,7 +78,6 @@ class Node extends Component {
 			recruit: cloneObj
 		})
 	}
-
 
 	handleChange(k, e) {
 		typeof k == "number" ? this.checkAll(k, e.target.checked) : this.checkSingle(k, e.target.checked);
@@ -95,7 +94,6 @@ class Node extends Component {
 			keys    : this.state.keys,
 			checkAll: this.state.checkAll
 		});
-		console.log(this.state.keys)
 	}
 
 	checkSingle(obj, value) {
@@ -109,6 +107,14 @@ class Node extends Component {
 			keys    : this.state.keys,
 			checkAll: this.state.checkAll
 		});
+	}
+
+	showSum(k) {
+		let aaa = 0;
+		this.state.recruit.info[k].require.map((vv, kk) => {
+			aaa += vv.count;
+		});
+		return aaa;
 	}
 
 	render() {
@@ -145,10 +151,9 @@ class Node extends Component {
 										onChange={this.handleChange.bind(this, k)}
 									/>{v.title}
 								</span>
-								<span className="sum right">{this.showSum()}</span>
+								<span className="sum right">{this.showSum(k)}</span>
 								<div className="g_clear"></div>
 							</div>
-
 							<div>
 								{v.require && v.require.map((vv, kk) => {
 									return (
@@ -174,9 +179,7 @@ class Node extends Component {
 									)
 								})}
 							</div>
-
 						</div>
-
 					)
 				})}
 			</div>

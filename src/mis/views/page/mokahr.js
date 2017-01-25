@@ -16,29 +16,45 @@ class Node extends Component {
 						require: [
 							{
 								name : 'Mac开发工程师',
-								count: 123
+								count: 9
 							},
 							{
 								name : 'IOS App 测试工程师',
-								count: 123
+								count: 17
 							},
 							{
-								name : 'IOS App 测试工程师',
-								count: 123
+								name : 'Android远程控制工程师',
+								count: 61
+							},
+							{
+								name : 'Web前端开发工程师',
+								count: 31
+							},
+							{
+								name : 'Android多媒体软件工程师',
+								count: 2
 							}
 
 						]
 					},
 					{
-						title  : '工程研发部门',
+						title  : '产品设计部门',
 						require: [
 							{
-								name : 'Mac开发工程师',
-								count: 123
+								name : '网页设计师',
+								count: 47
 							},
 							{
-								name : 'IOS App 测试工程师',
-								count: 123
+								name : 'ID/工业设计师',
+								count: 39
+							},
+							{
+								name : '视觉设计师/GUI界面设计师',
+								count: 42
+							},
+							{
+								name : '平面设计师',
+								count: 8
 							}
 						]
 					}
@@ -120,7 +136,7 @@ class Node extends Component {
 	render() {
 		return (
 			<div className="recruit" style={{
-				width          : '50%',
+				width          : '80%',
 				backgroundColor: 'rgb(106, 127, 142)',
 				color          : 'rgb(220, 220, 220)'
 			}}>
